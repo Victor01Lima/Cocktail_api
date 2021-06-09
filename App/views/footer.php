@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-md-6 text-center text-md-start">
-                <p class="text-sm mb-md-0">&copy; 2021, Desenvolvido por Victor Lima.</p>
+                <p class="text-sm mb-md-0">&copy; 2021, Victor Lima.</p>
             </div>
         </div>
     </div>

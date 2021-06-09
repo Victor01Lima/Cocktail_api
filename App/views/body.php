@@ -1,4 +1,3 @@
-<?php include './App/controllers/Busca_pedido.php';?>
 
 <body style="padding-top: 72px;">
 <header class="header">
@@ -26,17 +25,17 @@
         <div class="row">
             <div class="col-xl-10">
                 <div class="text-center text-lg-start">
-                    <p class="subtitle letter-spacing-4 mb-2 text-warning text-shadow">Informações sobre sua bebida</p>
-                    <h1 class="display-3 fw-bold text-shadow">O que deseja saber sobre seu Drink favorito?</h1>
+                    <p class="subtitle letter-spacing-4 mb-2 text-warning text-shadow">Information about your drink</p>
+                    <h1 class="display-3 fw-bold text-shadow">What do you want to know about your favorite Drink?</h1>
                 </div>
-                <div class="search-bar mt-5 p-3 p-lg-1 ps-lg-4">
+                <div class="search-bar mt-5 p-3 p-lg-1 ps-lg-4" style="width: 475px;">
                     <form  action="buscar.php" method="post">
                         <div class="row">
                             <div class="col-lg-4 d-flex align-items-center form-group">
-                                <input class="form-control border-0 shadow-0" type="text" name="search" placeholder="Sua bebida">
+                                <input class="form-control border-0 shadow-0" type="text" name="search" placeholder="your drink" style="width: 200px;">
                             </div>
                             <div class="col-lg-2 d-grid">
-                                <button class="btn btn-primary rounded-pill h-100" type="submit" >Search </button>
+                                <button class="btn btn-primary rounded-pill h-100" type="submit" style="margin-left: 130px; width: 150px; ">Search </button>
                             </div>
                         </div>
                     </form>

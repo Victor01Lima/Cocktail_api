@@ -1,11 +1,12 @@
 <?php
+
 $bebida = $_POST['search'];
 ?>
 
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <title>Resultado</title>
+    <title>Result</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +22,7 @@ $bebida = $_POST['search'];
         <img class="d-block mx-auto mb-2"
              src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Eucalyp-Deus_Cocktail.png/600px-Eucalyp-Deus_Cocktail.png"
              alt="" width="72" height="72">
-        <h2>Informações sobre seu drink</h2>
+        <h2>Information about your drink</h2>
 
     </div>
 
@@ -29,10 +30,16 @@ $bebida = $_POST['search'];
         <div class="col-md-12">
             <div class="container">
                 <h1 class="display-4 text-success"></h1>
-                <div  id="loading" ></div>
-                <p id="idIngredient"></p>
+                <div class="d-flex align-itens-center" id="loading" ></div>
+
+                <strong id="idIngredient"></strong>
+                </br>
+                <h6 id="abv"></h6>
+                <h5 id ="titulo_descricao"></h5>
                 <p id="description"></p>
-                <a href="index.php" class="btn btn-secondary btn-lg mt-5 text-white">Voltar</a>
+                <p id=""></p>
+                <a id ="botao" href="index.php" class="btn btn-secondary btn-lg mt-5 text-white" >Back</a>
+
             </div>
         </div>
 
@@ -58,9 +65,15 @@ $bebida = $_POST['search'];
 
             setTimeout(function (){
                 let result = response.ingredients[0];
+                console.log(result);
+
                 document.getElementById('idIngredient').innerText=result.strIngredient;
+                document.getElementById('abv').innerText='Alcohol content : '+result.strABV+'%';
+
+                document.getElementById('titulo_descricao').innerText='Description';
                 document.getElementById('description').innerText=result.strDescription;
                 loading.classList.remove('lds-dual-ring');
+
             },2000)
         }
 
