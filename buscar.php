@@ -64,15 +64,22 @@ $bebida = $_POST['search'];
         success: function (response) {
 
             setTimeout(function (){
-                let result = response.ingredients[0];
-                console.log(result);
+                if(response.ingredients==null){
+                    loading.classList.remove('lds-dual-ring');
+                    document.getElementById('titulo_descricao').innerText='ops, nothing found!';
+                }
+                else{
+                    let result = response.ingredients[0];
+                    console.log(result);
 
-                document.getElementById('idIngredient').innerText=result.strIngredient;
-                document.getElementById('abv').innerText='Alcohol content : '+result.strABV+'%';
+                    document.getElementById('idIngredient').innerText=result.strIngredient;
+                    document.getElementById('abv').innerText='Alcohol content : '+result.strABV+'%';
 
-                document.getElementById('titulo_descricao').innerText='Description';
-                document.getElementById('description').innerText=result.strDescription;
-                loading.classList.remove('lds-dual-ring');
+                    document.getElementById('titulo_descricao').innerText='Description';
+                    document.getElementById('description').innerText=result.strDescription;
+                    loading.classList.remove('lds-dual-ring');
+                }
+
 
             },2000)
         }
